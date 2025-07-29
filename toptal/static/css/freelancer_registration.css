@@ -1,0 +1,123 @@
+/* static/css/freelancer_registration.css */
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h2 {
+  color: #2c3e50;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+form {
+  margin-left: 670px;
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Password strength indicator */
+.password-strength {
+  height: 4px;
+  background-color: #eee;
+  margin-top: -16px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.password-strength::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 0%;
+  background-color: #e74c3c;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+input[name="password1"]:focus ~ .password-strength::before {
+  width: 33%;
+  background-color: #e74c3c;
+}
+
+input[name="password1"]:valid ~ .password-strength::before {
+  width: 66%;
+  background-color: #f39c12;
+}
+
+/* Form validation styling */
+input:invalid:not(:placeholder-shown) {
+  border-color: #e74c3c;
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: #2ecc71;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  form {
+    padding: 30px 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+}

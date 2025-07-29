@@ -1,0 +1,23 @@
+
+<!-- templates/freelancer_login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Freelancer Login</title>
+  <link rel="stylesheet" href="/static/css/freelancer_login.css">
+</head>
+<body>
+  <h2>Freelancer Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" required><br>
+
+    <button type="submit">Login</button>
+  </form>
+</body>
+</html>
