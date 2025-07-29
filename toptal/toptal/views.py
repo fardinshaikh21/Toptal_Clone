@@ -7,7 +7,7 @@ def home(request):
 
 
 def freelancer_registration(request):
-    return render(request,'freelancer_registration.html')    
+    return render(request,'freelancer_register.html')    
 
 def freelancer_login(request):
     return render(request,'freelancer_login.html')    
