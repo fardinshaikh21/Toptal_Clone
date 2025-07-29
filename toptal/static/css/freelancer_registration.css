@@ -1,123 +1,157 @@
-/* static/css/freelancer_registration.css */
-
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+/* Reset some basic elements */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f7fa;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+/* Container for the entire form */
+.container {
+  max-width: 420px;
+  width: 100%;
+  padding: 40px 20px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* Toptal logo */
+.logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+/* Heading */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
   color: #333;
 }
 
-h2 {
-  color: #2c3e50;
-  text-align: center;
-  font-size: 28px;
-  font-weight: 600;
+h1 span {
+  font-weight: normal;
+  font-size: 20px;
+  color: #444;
 }
 
-form {
-  margin-left: 670px;
-  background: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  max-width: 500px;
+/* Description */
+.description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.6;
 }
 
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-  color: #2c3e50;
-}
-
-input {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 16px;
-  transition: border-color 0.3s ease;
-}
-
-input:focus {
-  border-color: #3498db;
-  outline: none;
-}
-
-button {
-  width: 100%;
-  padding: 14px;
-  background-color: #3498db;
-  color: white;
+/* LinkedIn signup button */
+.linkedin-btn {
+  background-color: #0077b5;
+  color: #fff;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 12px;
+  border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
 }
 
-button:hover {
-  background-color: #2980b9;
+.linkedin-btn img {
+  width: 18px;
+  height: 18px;
 }
 
-/* Password strength indicator */
-.password-strength {
-  height: 4px;
-  background-color: #eee;
-  margin-top: -16px;
-  margin-bottom: 20px;
-  border-radius: 2px;
-  overflow: hidden;
+/* Note under LinkedIn */
+.note {
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
 }
 
-.password-strength::before {
-  content: '';
-  display: block;
-  height: 100%;
-  width: 0%;
-  background-color: #e74c3c;
-  transition: width 0.3s ease, background-color 0.3s ease;
+/* OR separator */
+.separator {
+  margin: 30px 0;
+  border-top: 1px solid #ccc;
+  position: relative;
 }
 
-input[name="password1"]:focus ~ .password-strength::before {
-  width: 33%;
-  background-color: #e74c3c;
+.separator span {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 0 10px;
+  font-size: 13px;
+  color: #888;
 }
 
-input[name="password1"]:valid ~ .password-strength::before {
-  width: 66%;
-  background-color: #f39c12;
+/* Form styling */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-/* Form validation styling */
-input:invalid:not(:placeholder-shown) {
-  border-color: #e74c3c;
+.register-form input,
+.register-form select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-input:valid:not(:placeholder-shown) {
-  border-color: #2ecc71;
+.register-form input:focus,
+.register-form select:focus {
+  outline: none;
+  border-color: #00b289;
+  box-shadow: 0 0 0 2px rgba(0, 178, 137, 0.2);
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  form {
-    padding: 30px 20px;
-  }
-  
-  h2 {
-    font-size: 24px;
-  }
+/* Policy text */
+.policy {
+  font-size: 12px;
+  color: #555;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.policy a {
+  color: #0077b5;
+  text-decoration: none;
+}
+
+.policy a:hover {
+  text-decoration: underline;
+}
+
+/* Submit button */
+.submit-btn {
+  background-color: #00b289;
+  color: white;
+  padding: 12px;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #009f77;
 }

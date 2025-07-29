@@ -1,28 +1,51 @@
-<!-- templates/freelancer_register.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Freelancer Registration</title>
-  <link rel="stylesheet" href="/static/css/freelancer_registration.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply to Join Toptal</title>
+  <link rel="stylesheet" href="static/css/freelancer_registration.css" />
 </head>
 <body>
-  <h2>Freelancer Registration</h2><br>
-  <form method="post">
-    {% csrf_token %}
-    <label for="username">Username:</label>
-    <input type="text" name="username" required><br>
+  <div class="container">
+    <img src="static/images/logo.png" alt="Toptal Logo" class="logo" />
 
-    <label for="email">Email:</label>
-    <input type="email" name="email" required><br>
+    <h1>Apply to Join<br><span>the World’s Top Talent Network</span></h1>
+    <p class="description">
+      Toptal is an exclusive network of the world’s top talent in business, design, marketing, and technology.
+      We provide access to top companies, a community of experts, and resources that can help accelerate your career.
+    </p>
 
-    <label for="password1">Password:</label>
-    <input type="password" name="password1" required><br>
+    <button class="linkedin-btn">
+      <img src="static/images/linkedin-icon.png" alt="LinkedIn" />
+      Sign Up with LinkedIn
+    </button>
 
-    <label for="password2">Confirm Password:</label>
-    <input type="password" name="password2" required><br>
+    <p class="note">By clicking <i>Sign up with LinkedIn</i>, you agree to let Toptal store your LinkedIn profile</p>
 
-    <button type="submit">Register</button>
-  </form>
+    <div class="separator"><span>OR</span></div>
+
+    <form action="/register" method="POST" class="register-form">
+      <select name="role" required>
+        <option value="">I'm applying as...</option>
+        <option value="developer">Developer</option>
+        <option value="designer">Designer</option>
+        <option value="finance expert">Finance Expert</option>
+        <!-- Add more roles as needed -->
+      </select>
+
+      <input type="text" name="fullname" placeholder="Full name" required />
+      <input type="email" name="email" placeholder="E-mail" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <input type="password" name="confirm_password" placeholder="Confirm password" required />
+
+      <p class="policy">
+        By submitting, you acknowledge and agree to
+        <a href="#">Toptal's Terms and Conditions</a> and <a href="#">Privacy Policy</a>.
+      </p>
+
+      <button type="submit" class="submit-btn">Apply to Join Toptal</button>
+    </form>
+  </div>
 </body>
 </html>
