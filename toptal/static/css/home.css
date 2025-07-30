@@ -20,25 +20,31 @@ body {
   color: #0056d2;
   font-weight: bold;
 }
- 
 
+ 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
+  padding: 20px 60px;
   background: linear-gradient(to right, #e2e6ee 50%, #e5e5eb 50%);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  font-family: sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px; /* Good standard header height */
 }
 
-.logo .img {
-  width: 40px;
-  height: 50px;
+
+.logo-img {
+  width: 160px;
+  height: auto;
+  margin-left: 110px;
 }
+
 
 .nav-left,
 .nav-right {
+  margin-right: 170px;
   display: flex;
   align-items: center;
   gap: 25px; /* Proper spacing between links */
@@ -67,12 +73,6 @@ header {
   background: #149944;
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
 
 .green-btn2 {
   font-size: 20px;
@@ -80,13 +80,14 @@ header {
   color: white;
   padding: 10px 18px;
   border: none;
-  margin-left: 150px;
+  margin-left: 170px;
   margin-top: 20px;
   border-radius: 4px;
   cursor: pointer;
   width: 280px;
   height: 60px;
 }
+
 
 .hero {
   display: flex;
@@ -99,9 +100,8 @@ header {
 }
 
 .hero-text h1 {
-  margin-top: 20px;
-  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  margin-left: 150px;
+  /* margin-top: 20px; */
+  margin-left: 170px;
   font-size: 65px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -122,7 +122,7 @@ header {
   font-size: 24px;
   line-height: 1.5;
   margin-bottom: 20px;
-  margin-left: 150px;
+  margin-left: 170px;
 }
 
 
@@ -133,8 +133,9 @@ header {
 }
 
 .profile-photo {
-  width: 700px;
-  height: 500px;
+  margin-top: 30px;
+  width: 600px;
+  height: 600px;
 }
 
 .profile-card {
@@ -143,7 +144,7 @@ header {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   font-family: 'Inter', sans-serif;
-  margin-right: 180px;
+  margin-right: 200px;
   width: 300px;
   height: 350px;
 }
@@ -164,70 +165,151 @@ header {
   margin-top: 8px;
 }
 
-
-
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  background-color: #eef5f4;
+  display: flex;
+  width: 100%;
 }
 
 .header {
+  padding: 30px;
+  margin-left: 150px;
   text-align: center;
-  margin-bottom: 30px;
+  width: 300px;
 }
 
 .trusted-by {
   font-size: 18px;
   font-weight: bold;
   color: #333;
-  margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .brands {
+  margin-left: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 30px;
-  margin-bottom: 40px;
+  gap: 80px;
 }
 
-.brand {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  opacity: 0.8;
-  transition: opacity 0.3s;
+.brand img{
+  mix-blend-mode: color-burn;
+  width: 130px;
+  height: 80px;
 }
 
 .brand:hover {
   opacity: 1;
 }
 
-.case-studies {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
+
+.slider-section {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
 }
 
-.case-study {
+.slider-section h2 {
   text-align: center;
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: #333;
 }
 
-.case-study-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
+.slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.card-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+.expert-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 250px;
+  max-width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.expert-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.expert-card h3 {
+  margin: 10px 0 5px;
+  color: #2e5d9f;
+}
+
+.verified {
+  color: green;
+  font-size: 14px;
+}
+
+.field {
+  font-size: 14px;
+  color: #333;
+}
+
+.role {
+  font-size: 14px;
+  color: #555;
+}
+
+.company {
+  font-size: 13px;
+  margin-top: 10px;
+  color: #333;
+}
+
+.company-logo {
+  height: 16px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.selected {
+  border: 2px solid #2e5d9f;
+}
+
+.nav-btn {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
   transition: background-color 0.3s;
 }
 
-.case-study-button:hover {
-  background-color: #555;
+.nav-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.nav-btn.left {
+  position: absolute;
+  left: -20px;
+}
+
+.nav-btn.right {
+  position: absolute;
+  right: -20px;
 }
